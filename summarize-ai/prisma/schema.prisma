@@ -5,10 +5,17 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
   output   = "../lib/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+model Summary{
+  id          String   @id @default(uuid())
+  originalText String
+  summary      String
+  createdAt    DateTime @default(now())
 }
