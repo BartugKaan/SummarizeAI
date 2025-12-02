@@ -9,6 +9,12 @@ export async function GET() {
       orderBy: {
         createdAt: 'desc',
       },
+      select: {
+        id: true,
+        originalText: true,
+        summary: true,
+        createdAt: true,
+      },
     })
 
     return NextResponse.json(summaries, { status: 200 })
